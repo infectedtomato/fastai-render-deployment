@@ -4,14 +4,24 @@ function showPicker() {
   el("file-input").click();
 }
 
-function showPicked(input) {
+function showPicked(input, file) {
   el("upload-label").innerHTML = input.files[0].name;
   var reader = new FileReader();
   reader.onload = function(e) {
-    el("image-picked").src = e.target.result;
+   var image = new Image();
+    
+    image.onload = function() {
+      var canvas = document.createElement("canvas");
+      var context = canvas.getContext("2d");
+      var new_size = get_size(image.width, image.height, max_side_px);
+      [canvas.width, canvas.height] = new_size;
+      context.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvas.width, canvas.height);
+      console.log("Converted");
+    };
+    image.src = e.target.result;
     el("image-picked").className = "";
   };
-  reader.readAsDataURL(input.files[0]);
+  reader.readAsDataURL(file);
 }
 
 function analyze() {
