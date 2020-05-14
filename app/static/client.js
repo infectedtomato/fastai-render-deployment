@@ -4,7 +4,7 @@ function showPicker() {
   el("file-input").click();
 }
 
-function showPicked(input, file) {
+function showPicked(input) {
   el("upload-label").innerHTML = input.files[0].name;
   var reader = new FileReader();
   reader.onload = function(e) {
@@ -21,7 +21,7 @@ function showPicked(input, file) {
             console.log("Converted");
 
   };
-  reader.readAsDataURL(file);
+  reader.readAsDataURL(input.files[0]);
 }
 
 function analyze() {
