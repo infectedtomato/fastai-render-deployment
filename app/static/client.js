@@ -16,11 +16,14 @@ function showPicked(input) {
       [canvas.width, canvas.height] = new_size;
       context.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvas.width, canvas.height);
       console.log("Converted");
-    };
-      el("image-picked").src = e.target.result;
-      el("image-picked").className = "";
+
+      el(image-picked).src = canvas.toDataURL("image/jpeg", quality);
       analyze(image-picked)
+    };
+
+      image.src = e.target.result;  
   };
+    el("image-picked").className = "";
     reader.readAsDataURL(input.files[0]);
 }
 
