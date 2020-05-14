@@ -4,7 +4,7 @@ function showPicker() {
   el("file-input").click();
 }
 
-function showPicked(input) {
+function showPicked(input, file) {
   el("upload-label").innerHTML = input.files[0].name;
   var reader = new FileReader();
   reader.onload = function(e) {
@@ -20,8 +20,10 @@ function showPicked(input) {
             context.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvas.width, canvas.height);
             console.log("Converted");
 
-  };
-  reader.readAsDataURL(input.files[0]);
+     };
+        image.src = e.target.result;
+   };
+      reader.readAsDataURL(file);
 }
 
 function analyze() {
