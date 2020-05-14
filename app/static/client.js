@@ -17,15 +17,15 @@ function showPicked(input) {
       context.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvas.width, canvas.height);
       console.log("Converted");
 
+    el("image-picked").src = e.target.result;
     el("image-picked").className = "";
-    };
-     image.src = e.target.result;
   };
-     reader.readAsDataURL(input.files[0]);
+};
+  reader.readAsDataURL(input.files[0]);
 }
 
 function analyze() {
-  var uploadFiles = el("file-input").files;
+  var uploadFiles = el("image-picked").files;
   if (uploadFiles.length !== 1) alert("Please upload an image for recognition!!");
 
   el("analyze-button").innerHTML = "Processing Image...";
