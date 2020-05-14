@@ -16,16 +16,16 @@ function showPicked(input) {
       [canvas.width, canvas.height] = new_size;
       context.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvas.width, canvas.height);
       console.log("Converted");
-
-    el("image-picked").src = e.target.result;
-    el("image-picked").className = "";
+    };
+      el("image-picked").src = e.target.result;
+      el("image-picked").className = "";
+      analyze(image-picked)
   };
-};
-  reader.readAsDataURL(input.files[0]);
+    reader.readAsDataURL(input.files[0]);
 }
 
 function analyze() {
-  var uploadFiles = el("image-picked").files;
+  var uploadFiles = el("file-input").files;
   if (uploadFiles.length !== 1) alert("Please upload an image for recognition!!");
 
   el("analyze-button").innerHTML = "Processing Image...";
