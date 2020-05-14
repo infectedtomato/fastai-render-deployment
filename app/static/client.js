@@ -4,26 +4,14 @@ function showPicker() {
   el("file-input").click();
 }
 
-function showPicked(input, file) {
+function showPicked(input) {
   el("upload-label").innerHTML = input.files[0].name;
   var reader = new FileReader();
   reader.onload = function(e) {
-     el('image-picked').src = e.target.result;
-     el('image-picked').className = '';
-     var image = new Image();
-        image.onload=function(){
-            el("image-picked").src=image.src;
-            var canvas=document.createElement("canvas");
-            var context=canvas.getContext("2d");
-            new_size = get_sizes(image.width, image.height, max_side_px)
-            [canvas.width,canvas.height] = new_size;
-            context.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvas.width, canvas.height);
-            console.log("Converted");
-
-     };
-        image.src = e.target.result;
-   };
-      reader.readAsDataURL(file);
+    el("image-picked").src = e.target.result;
+    el("image-picked").className = "";
+  };
+  reader.readAsDataURL(input.files[0]);
 }
 
 function analyze() {
