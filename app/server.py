@@ -9,10 +9,10 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://www.dropbox.com/s/ttn7y3ixlhn9ivj/multi-class_classification.pkl?dl=1'
+export_file_url = 'https://www.dropbox.com/s/r5viqjvc42jfk83/multi-class_classification.pkl?dl=1'
 export_file_name = 'multi-class_classification.pkl'
 
-classes = ['1', '10', '100', '20', '200', '2000', '5', '50', '500', 'GBP', 'INR', 'USD']
+classes = ['1', '10', '100', '20', '200', '2000', '5', '50', '500', 'GBP', 'INR', 'Not Sure', 'USD']
 path = Path(__file__).parent
 
 app = Starlette()
