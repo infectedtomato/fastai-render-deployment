@@ -13,7 +13,7 @@ from starlette.staticfiles import StaticFiles
 #export_file_name = 'multi-class_classification.pkl'
 #classes = ['1', '10', '100', '20', '200', '2000', '5', '50', '500', 'GBP', 'INR', 'Not Sure', 'USD']
 
-export_file_url = 'https://www.dropbox.com/s/nsek5r28nmk4t5n/single-class_classification.pkl?dl=1'
+export_file_url = 'https://www.dropbox.com/s/ut68jips9840764/single-class_classification.pkl?dl=1'
 export_file_name = 'single-class_classification.pkl'
 classes = ['1 USD', '10 GBP', '10 INR', '10 USD', '100 INR', '100 USD', '20 GBP', '20 INR', '20 USD', '200 INR', '2000 INR', '5 GBP', '5 USD', '50 GBP', '50 INR', '50 USD', '500 INR', 'Not Sure']
 
